@@ -1,22 +1,10 @@
 #!/usr/bin/python3
-# -----------------------------------------------------------
-# Python program that:
-# demonstrates how to convert a Roman numeral to an integer
-#
-# (C) 2022 Igbinijesu Samuel, Lagos, Nigeria
-# email igbinijesusamuel@gmail.com
-# -----------------------------------------------------------
-
-
-def roman_to_int(roman_string):
-    if not roman_string or type(roman_string) != str:
-        return 0
-    roman_d = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
-    roman_n = 0
-    for j in range(len(roman_string)):
-        if j > 0 and roman_d[roman_string[j]] > roman_d[roman_string[j - 1]]:
-            roman_n += roman_d[roman_string[j]] - 2 * \
-                        roman_d[roman_string[j - 1]]
-        else:
-            roman_n += roman_d[roman_string[j]]
-    return roman_n
+def weight_average(my_list=[]):
+    if my_list and len(my_list):
+        num = 0
+        dem = 0
+        for tup in my_list:
+            num += (tup[0] * tup[1])
+            dem += tup[1]
+        return (num / dem)
+    return 0
